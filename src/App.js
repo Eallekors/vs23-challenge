@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useReducer }  from 'react';
 import Header from "./components/Header";
 import Meals from "./components/Meals";
 import { CartProvider } from './store/CartContext';
 
+
+
+
 const App = () => {
+  
  return (
-    <CartProvider>
+  <CartProvider > 
+       
     <Header />
     <Meals />
     </CartProvider>
