@@ -5,10 +5,9 @@ import { CartContext } from "../store/CartContext";
 const MealItem = (props) => {
     const formattedPrice = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(props.meal.price);
 
-    const { addToCart } = useContext(CartContext); // Use useContext hook to access addToCart function from CartContext
+    const { addToCart } = useContext(CartContext); 
 
     const handleAddToCart = () => {
-        // Call addToCart function with the meal data
         addToCart(props.meal);
         console.log(props.meal);
     };   

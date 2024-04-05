@@ -8,11 +8,11 @@ import ReactDOM from 'react-dom';
 
 
 const App = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal open/close
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
 
   const toggleModal = () => {
-    setIsModalOpen(!isModalOpen); // Toggle modal state
+    setIsModalOpen(!isModalOpen); 
     console.log('toggle')
 };
  return (
@@ -20,8 +20,8 @@ const App = () => {
        
     <Header openModal={toggleModal} /> 
     <Meals />
-    {ReactDOM.createPortal( // Use createPortal to render the Modal into the div with id "modal"
-                <Modal isOpen={isModalOpen} toggleModal={toggleModal} />,
+    {ReactDOM.createPortal( 
+                <Modal isOpen={isModalOpen} toggleModal={toggleModal} />, 
                 document.getElementById('modal')
             )}
     </CartProvider>

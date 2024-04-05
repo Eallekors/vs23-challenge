@@ -5,7 +5,7 @@ import Modal from './UI/Modal';
 import { CartContext } from '../store/CartContext';
 
 const Header = ({ openModal}) => {
-    const { cartItems } = useContext(CartContext); // Use useContext hook to access cartItems from CartContext
+    const { cartItems } = useContext(CartContext); 
 
     console.log(cartItems)
     const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
