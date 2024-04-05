@@ -5,8 +5,7 @@ const App = () => {
  return (
     <>
     <Header />
-     
-     <Meals />
+    <Meals />
     </>
   );
 }
