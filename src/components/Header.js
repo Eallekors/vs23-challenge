@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import logo from '../assets/logo.jpg'
 import Button from './UI/Button'
+import Modal from './UI/Modal';
 import { CartContext } from '../store/CartContext';
 
-const Header = () => {
+const Header = ({ openModal}) => {
     const { cartItems } = useContext(CartContext); // Use useContext hook to access cartItems from CartContext
 
     console.log(cartItems)
     const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
-    const handleButtonClick = () => {
-        // Handle button click event
-       
-    }
+
+    
     return (
         <header id="main-header">
             <div id="title">
@@ -20,7 +19,8 @@ const Header = () => {
                 <h1>React Food Order App</h1>
             </div>
             <nav>
-            <Button textOnly onClick={handleButtonClick}>Cart ({totalCount})</Button>
+            <Button textOnly onClick={openModal}>Cart ({totalCount})</Button>
+            <Modal  />
             </nav>
         </header>
     )
